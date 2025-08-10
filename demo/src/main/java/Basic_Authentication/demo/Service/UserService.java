@@ -1,9 +1,10 @@
 package Basic_Authentication.demo.Service;
 
 import Basic_Authentication.demo.Dto.UserDto;
-import Basic_Authentication.demo.Entity.User;
+import Basic_Authentication.demo.Entity.AppUser;
+
 
 public interface UserService {
-    User registerUser(UserDto userDto);
-    User findUserById(int id);
+    AppUser registerUser(UserDto userDto);
+    AppUser findUserById(int id);
 }
