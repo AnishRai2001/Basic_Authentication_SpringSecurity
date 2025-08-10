@@ -3,9 +3,12 @@ package Basic_Authentication.demo.Dto;
 import lombok.Data;
 
 @Data
-public class UserDto {
+public class LoginDto {
     private String email;
     private String password;
+
+    public LoginDto() {
+    }
 
     public String getEmail() {
         return email;
@@ -23,13 +26,3 @@ public class UserDto {
         this.password = password;
     }
 }
-
-//    @Data
-//    public class UserDto {
-//        private String username;
-//        private String email;
-//        private String password;
-//        private String phoneNumber;
-//        private String address;
-//    }
-

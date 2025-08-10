@@ -1,5 +1,6 @@
 package Basic_Authentication.demo.Controller;
 
+import Basic_Authentication.demo.Dto.LoginDto;
 import Basic_Authentication.demo.Dto.UserDto;
 import Basic_Authentication.demo.Entity.AppUser;
 import Basic_Authentication.demo.Service.UserService;
@@ -29,5 +30,11 @@ public class UserController {
         response.setData(savedUser);
 
         return new ResponseEntity<>(response, HttpStatus.CREATED);
+    }
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody LoginDto loginDto) {
+        LoginDto user = service.authenticate(loginDto.getEmail(), loginDto.getPassword());
+        // You can return JWT here if using token-based auth
+        return ResponseEntity.ok("Login successful for: " + user.getEmail());
     }
 }
